@@ -1,0 +1,12 @@
+.app {
+  color: #fff;
+  display: grid;
+  justify-items: center;
+
+  &__block {
+    width: 539px;
+    background: #ffffffd9;
+    border-radius: 1rem;
+    margin: 5rem auto;
+  }
+}
