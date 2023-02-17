@@ -1,0 +1,14 @@
+.btn {
+  background: #000B49;
+  width: 200px;
+  height: 57px;
+  padding: 0.5rem 4rem;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid #9E896A;
+  border-radius: 40px;
+
+  &:disabled {
+    background: #808080;
+  }
+}
