@@ -1,0 +1,30 @@
+.registration {
+  display: grid;
+  justify-items: center;
+  margin: 4rem auto;
+  width: 539px;
+  // height: 541px;
+  background: #ffffffd9;
+  border-radius: 1rem;
+  padding: 2rem 0;
+
+  &__password-eye  {
+    cursor: pointer;
+    // padding: 0;
+    color: #000;
+
+    & svg {
+      width: 27px;
+      height: 27px;
+      position: absolute;
+      top: 28%;
+      right: 5%;
+    }
+  }
+}
+
+.switch {
+  display: flex;
+  gap: 10px;
+}
+
