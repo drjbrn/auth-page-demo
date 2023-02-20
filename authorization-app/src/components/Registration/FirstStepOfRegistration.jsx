@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PasswordAtRegistration from './Passwords';
 import EmailAtRegistration from './Email';
 
@@ -20,25 +21,33 @@ function FirstStepOfRegistration({ handleSubmit }) {
   };
 
   return (
-    <form 
-      action=""
-      onSubmit={handleSubmit}
-      className='registration__form form'
-    >
-      <EmailAtRegistration
-        validationEmail={handleChangeEmail}
-      />
-      <PasswordAtRegistration
-        validationPassword={handleChangePassword}
-        password={password}
-      />
-      <button
-        disabled={disabled}
-        type='submit'
-        className='registration__btn btn'>
-        Continue
-      </button>
-    </form>
+    <>
+      <form 
+        action=""
+        onSubmit={handleSubmit}
+        className='registration__form form'
+      >
+        <EmailAtRegistration
+          validationEmail={handleChangeEmail}
+        />
+        <PasswordAtRegistration
+          validationPassword={handleChangePassword}
+          password={password}
+        />
+        <button
+          disabled={disabled}
+          type='submit'
+          className='registration__btn btn'>
+          Continue
+        </button>
+      </form>
+      <div className='switch'>
+      <p>
+        Already have an account?
+      </p>
+      <Link to="../login">Login</Link>
+      </div>
+    </>
   )
 }
 
