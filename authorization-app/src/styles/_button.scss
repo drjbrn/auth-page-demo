@@ -1,14 +1,16 @@
+@import './vars';
+
 .btn {
-  background: #000B49;
+  background: $dark-blue;
   width: 200px;
   height: 57px;
   padding: 0.5rem 4rem;
-  color: #fff;
+  color: $white;
   font-size: 1rem;
-  border: 1px solid #9E896A;
+  border: 1px solid $brown-border;
   border-radius: 40px;
 
   &:disabled {
-    background: #808080;
+    background: $grey;
   }
 }

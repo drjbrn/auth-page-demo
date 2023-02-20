@@ -1,16 +1,17 @@
+@import '../../styles/vars.scss';
+
 .registration {
   margin: 0 auto;
   display: grid;
   justify-items: center;
   width: 539px;
-  background: #ffffffd9;
+  background: $white-light;
   border-radius: 1rem;
   padding: 2rem 0;
 
   &__password-eye  {
     cursor: pointer;
-    // padding: 0;
-    color: #000;
+    color: $black;
 
     & svg {
       width: 27px;
