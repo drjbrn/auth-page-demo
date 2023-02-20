@@ -1,6 +1,20 @@
-function SecondStepOfRegistration() {
+import { useState } from "react";
+import RegistrationAccepted from './RegistrationAccepted';
+
+function SecondStepOfRegistration({ handleSubmit }) {
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const regexPhoneNumber = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
+
+  const handleChangePhoneNumber = (event) => {
+    setPhoneNumber(event.target.value);
+    console.log(phoneNumber)
+  };
+
+  let disabled = (regexPhoneNumber.test(phoneNumber)) ? false : true;
+
   return (
-    <form className='registration__form form'>
+    <form className='registration__form form' onSubmit={handleSubmit}>
       <label htmlFor="firstName" className="registration__label form__label">
         <input
           id="firstName"
@@ -36,7 +50,7 @@ function SecondStepOfRegistration() {
           type="text"
           className="registration__input form__input"
           required
-          // onChange={validationEmail}
+          onChange={handleChangePhoneNumber}
           // value={email}
         />
         <span className="registration__span form__span">
@@ -44,7 +58,7 @@ function SecondStepOfRegistration() {
         </span>
       </label>
       <button
-        // disabled={disabled}
+        disabled={disabled}
         type='submit'
         className='registration__btn btn'>
         Confirm
