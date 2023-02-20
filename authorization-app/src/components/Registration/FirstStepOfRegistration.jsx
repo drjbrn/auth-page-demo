@@ -29,6 +29,7 @@ function FirstStepOfRegistration({ handleSubmit }) {
       >
         <EmailAtRegistration
           validationEmail={handleChangeEmail}
+          email={email}
         />
         <PasswordAtRegistration
           validationPassword={handleChangePassword}

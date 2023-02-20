@@ -1,4 +1,4 @@
-function EmailAtRegistration({ validationEmail }) {
+function EmailAtRegistration({ validationEmail, email }) {
   return (
     <label htmlFor="email" className="registration__label form__label">
       <input
@@ -8,7 +8,7 @@ function EmailAtRegistration({ validationEmail }) {
         className="registration__input form__input"
         required
         onChange={validationEmail}
-        // value={email}
+        value={email}
       />
       <span className="registration__span form__span">
         Email Address
