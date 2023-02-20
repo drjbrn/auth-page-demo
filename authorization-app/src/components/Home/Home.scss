@@ -1,24 +1,17 @@
+@import '../../styles/vars.scss';
+
 .home-page {
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-evenly;
   margin: 5rem auto;
-  // display: grid;
-  // // grid-template-columns: repeat(3, 1fr);
-  // grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
-  // grid-gap: 20px;
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   gap: 25px;
 
   & a {
     width: 200px;
     height: 57px;
     padding: 1rem;
-    background: #fff;
-    color: #000;
-    border: 1px solid #9E896A;
+    background: $white;
+    color: $black;
+    border: 1px solid $brown-border;
     border-radius: 40px;
     font-size: 1rem;
     text-align: center;
