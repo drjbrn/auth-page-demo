@@ -8,19 +8,6 @@
   background: $white-light;
   border-radius: 1rem;
   padding: 2rem 0;
-
-  &__password-eye  {
-    cursor: pointer;
-    color: $black;
-
-    & svg {
-      width: 27px;
-      height: 27px;
-      position: absolute;
-      top: 28%;
-      right: 5%;
-    }
-  }
 }
 
 .accepted {

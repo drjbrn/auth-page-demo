@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import useEmailAndPasswordValidation from '../../../hooks/useEmailAndPasswordValidation';
-import PasswordAtRegistration from './Passwords';
-import EmailAtRegistration from './Email';
+import Password from '../../../components/Passwords';
+import Email from '../../../components/Email';
+import RenderCheckPassword from '../../../components/RenderCheckPassword/RenderCheckPassword';
 
 function FirstStepOfRegistration({ handleSubmit }) {
   const { email, password, isFormValid, handleChangeEmail, handleChangePassword } = useEmailAndPasswordValidation();
@@ -13,14 +14,15 @@ function FirstStepOfRegistration({ handleSubmit }) {
         onSubmit={handleSubmit}
         className='registration__form form'
       >
-        <EmailAtRegistration
+        <Email
           validationEmail={handleChangeEmail}
           email={email}
         />
-        <PasswordAtRegistration
+        <Password
           validationPassword={handleChangePassword}
           password={password}
         />
+        {password.length > 0 && <RenderCheckPassword password={password}/>}
         <button
           disabled={isFormValid}
           type='submit'

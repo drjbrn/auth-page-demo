@@ -1,8 +1,8 @@
-import Input from '../../../components/Input';
+import Input from './Input';
 
-function EmailAtRegistration({ validationEmail, email }) {
+function Email({ validationEmail, email }) {
   return (
-    <label htmlFor="email" className="registration__label form__label">
+    <label htmlFor="email" className="form__label">
       {/* <input
         id="email"
         name="email"
@@ -18,13 +18,13 @@ function EmailAtRegistration({ validationEmail, email }) {
         name="email"
         value={email}
         onChange={validationEmail}
-        className="registration__input"
+        // className="registration__input"
       />
-      <span className="registration__span form__span">
+      <span className="form__span">
         Email Address
       </span>
     </label>
   )
 }
 
-export default EmailAtRegistration;
+export default Email;
