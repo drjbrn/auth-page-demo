@@ -1,24 +1,10 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useEmailAndPasswordValidation from '../../../hooks/useEmailAndPasswordValidation';
 import PasswordAtRegistration from './Passwords';
 import EmailAtRegistration from './Email';
 
 function FirstStepOfRegistration({ handleSubmit }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g;
-
-  let disabled = (regexEmail.test(email) && regexPassword.test(password)) ? false : true;
-
-  const handleChangeEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleChangePassword = (event) => {
-    setPassword(event.target.value);
-  };
+  const { email, password, isFormValid, handleChangeEmail, handleChangePassword } = useEmailAndPasswordValidation();
 
   return (
     <>
@@ -36,7 +22,7 @@ function FirstStepOfRegistration({ handleSubmit }) {
           password={password}
         />
         <button
-          disabled={disabled}
+          disabled={isFormValid}
           type='submit'
           className='registration__btn btn'>
           Continue
