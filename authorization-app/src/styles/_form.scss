@@ -1,3 +1,5 @@
+@import './vars';
+
 .form {
   margin: 1rem;
   display: flex;
@@ -19,18 +21,18 @@
   
   &__input {
     background: transparent;
-    color: black;
+    color: $black;
     width: 451px;
     height: 57px;
-    background: #FFFFFF;
-    border: 1px solid #9E896A;
+    background: $white;
+    border: 1px solid $brown-border;
     border-radius: 40px;
     padding-left: 1.1rem;
   }
   
   &__span {
     font-size: 16px;
-    color: #000;
+    color: $black;
     opacity: 0.5;
     pointer-events: none;
     position: absolute;
