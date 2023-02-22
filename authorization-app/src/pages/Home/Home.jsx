@@ -8,8 +8,8 @@ function Home() {
         Welcome to the demo version of the authorization page
       </h1>
       <div className="home-page__btn">
-        <Link to="../login">Login</Link>
-        <Link to="../registration">Sing Up</Link>
+        <Link to="../login" className="link">Login</Link>
+        <Link to="../registration" className="link">Sing Up</Link>
       </div>
     </div>
   )

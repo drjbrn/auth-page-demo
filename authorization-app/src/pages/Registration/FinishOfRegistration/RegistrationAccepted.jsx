@@ -6,16 +6,12 @@ function RegistrationAccepted() {
       <p className="accepted__text">
         Login account has been created
       </p>
-      <div className="accepted__btns">
-        <Link to="/">
-          <button className="btn">
-            Home
-          </button>
+      <div className="accepted__btn">
+        <Link to="/" className="link">
+          Home
         </Link>
-        <Link to="../login">
-          <button className="btn">
-            Login
-          </button>
+        <Link to="../login" className="link">
+          Login
         </Link>
       </div>
     </div>
