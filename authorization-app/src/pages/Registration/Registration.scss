@@ -23,20 +23,15 @@
   }
 }
 
-.switch {
-  display: flex;
-  gap: 10px;
-}
-
 .accepted {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  gap: 2em;
 
-  &__btns {
+  &__btn {
     display: flex;
-    gap: 25px;
+    gap: 2em;
   }
 }
 
