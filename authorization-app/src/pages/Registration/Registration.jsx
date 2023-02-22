@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './Registration.scss';
 import '../../styles/_button.scss';
 import '../../styles/_form.scss';
-import SecondStepOfRegistration from './SecondStepOfRegistration';
-import FirstStepOfRegistration from './FirstStepOfRegistration';
-import RegistrationAccepted from './RegistrationAccepted';
+import SecondStepOfRegistration from './SecondStepOfRegistration/SecondStepOfRegistration';
+import FirstStepOfRegistration from './FirstStepOfRegistration/FirstStepOfRegistration';
+import RegistrationAccepted from './FinishOfRegistration/RegistrationAccepted';
 
 function Registration() {
   const [stepOfRegistration, setStepOfRegistration] = useState('first');

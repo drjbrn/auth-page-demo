@@ -1,7 +1,9 @@
+import Input from '../../../components/Input';
+
 function EmailAtRegistration({ validationEmail, email }) {
   return (
     <label htmlFor="email" className="registration__label form__label">
-      <input
+      {/* <input
         id="email"
         name="email"
         type="text"
@@ -9,6 +11,14 @@ function EmailAtRegistration({ validationEmail, email }) {
         required
         onChange={validationEmail}
         value={email}
+      /> */}
+      <Input
+        type="text"
+        id="email"
+        name="email"
+        value={email}
+        onChange={validationEmail}
+        className="registration__input"
       />
       <span className="registration__span form__span">
         Email Address

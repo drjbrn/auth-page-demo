@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import ValidationPassword from '../ValidationPassword/ValidationPassword'
+import RenderCheckPassword from '../../../components/RenderCheckPassword/RenderCheckPassword'
+import Input from '../../../components/Input';
 
 function PasswordAtRegistration({ validationPassword, password}) {
   const [hidePassword, setHidePassword] = useState(true);
@@ -16,6 +17,8 @@ function PasswordAtRegistration({ validationPassword, password}) {
     setHidePassword(hide);
   }
 
+  console.log(password)
+
   const openPasswordEye = <div className='registration__password-eye' onClick={() => {toggleHidePassword(false)}}>
                             <FontAwesomeIcon icon={faEye}/>
                           </div>
@@ -28,14 +31,13 @@ function PasswordAtRegistration({ validationPassword, password}) {
   return (
     <>
       <label htmlFor="password" className="registration__label form__label">
-        <input
+        <Input 
           id="password"
           name="password"
           type="password"
-          className="registration__input registration__password form__input"
-          required
-          onChange={validationPassword}
           value={password}
+          onChange={validationPassword}
+          className="registration__input registration__password"
         />
         { hidePassword === true
         ? openPasswordEye
@@ -45,7 +47,7 @@ function PasswordAtRegistration({ validationPassword, password}) {
           Password
         </span>
       </label>
-      {password.length > 0 && <ValidationPassword password={password}/>}
+      {password.length > 0 && <RenderCheckPassword password={password}/>}
     </>
   )
 }

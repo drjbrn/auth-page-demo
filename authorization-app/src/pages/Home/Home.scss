@@ -1,0 +1,71 @@
+@import '../../styles/vars.scss';
+@import '../../styles/media-mixins.scss';
+
+.home-page {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  @include for-tablet {
+    font-size: 14px;
+  }
+
+  @include for-phone-landscape {
+    font-size: 12px;
+  }
+
+  @include for-phone {
+    font-size: 10px;
+  }
+
+  &__title {
+    margin: 0 32px;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.12em solid $black;
+    animation: typing 7s steps(53), blink 0.75s step-start infinite;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    & a {
+      color: $white;
+
+      &::before {
+        content: '';
+        background-color: $brown-border;
+      }
+    }
+  }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+@keyframes blink {
+  0% {
+    border-color: $brown-border;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: $brown-border;
+  }
+}

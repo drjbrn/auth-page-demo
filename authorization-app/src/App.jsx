@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
-import Home from './components/Home/Home';
-import Login from './components/Login/Login';
-import Registration from './components/Registration/Registration';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Registration from './pages/Registration/Registration';
 
 function App() {
   return (
