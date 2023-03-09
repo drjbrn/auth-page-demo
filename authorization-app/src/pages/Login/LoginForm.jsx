@@ -3,7 +3,7 @@ import AuthForm from '../../components/AuthForm';
 
 function LoginForm({ handleSubmit }) {
   return (
-    <div className="login">
+    <>
       <AuthForm
         submitForm={handleSubmit}
         buttonText='Login'
@@ -16,7 +16,7 @@ function LoginForm({ handleSubmit }) {
           Sing Up
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 

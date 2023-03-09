@@ -4,7 +4,7 @@ function RegistrationAccepted() {
   return (
     <div className="accepted">
       <p className="accepted__text">
-        Login account has been created
+        Login account has been created!
       </p>
       <div className="accepted__btn">
         <Link to="/" className="link">

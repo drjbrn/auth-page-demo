@@ -12,12 +12,12 @@ function Login() {
   }
 
   return (
-    <>
+    <div className="login">
       { acceptedLogin
         ? <GreetingUser />
         : <LoginForm handleSubmit={handleSubmit}/>
       }
-    </>
+    </div>
   );
 }
 
