@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import Input from './Input';
+import InputField from './InputField';
 
 function Password({ validationPassword, password }) {
   const [hidePassword, setHidePassword] = useState(true);
@@ -16,22 +16,21 @@ function Password({ validationPassword, password }) {
   ? <FontAwesomeIcon icon={faEye} />
   : <FontAwesomeIcon icon={faEyeSlash} />;
 
-
   return (
-    <label htmlFor="password" className="form__label">
-      <Input
-        id="password"
-        name="password"
-        type={inputType}
-        value={password}
-        onChange={validationPassword}
-        className="input__password"
-      />
-      <div className='form__password-eye' onClick={toggleHidePassword}>
-        {eyeIcon}
-      </div>
-      <span className="form__span">Password</span>
-    </label>
+    <InputField
+      id="password"
+      label="Password"
+      type={inputType}
+      name="password"
+      value={password}
+      required
+      onChange={validationPassword}
+      showPasswordIcon={
+        <div className='form__password-eye' onClick={toggleHidePassword}>
+          {eyeIcon}
+        </div>
+      }
+    />
   );
 }
 
