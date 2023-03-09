@@ -1,33 +1,23 @@
 @import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
 
 .login {
-  margin: 0 auto;
-  display: grid;
-  justify-items: center;
-  width: 539px;
-  background: $white-light;
-  border-radius: 1rem;
-  padding: 2rem 0;
+  @include white-bg;
 }
 
 .greeting {
-  font-size: 1.5em;
-  margin: 0 auto;
-  display: grid;
-  justify-items: center;
-  width: 539px;
-  background: $white-light;
-  border-radius: 1rem;
-  padding: 2rem 0;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__text {
     margin-bottom: 20px;
   }
 
   &__btn {
-    display: flex;
-    align-items: center;
     color: $black;
+    display: flex;
     gap: 0.5em;
   }
 
