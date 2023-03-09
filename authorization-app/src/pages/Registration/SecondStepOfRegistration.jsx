@@ -1,71 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import InputField from "../../components/InputField";
 
 function SecondStepOfRegistration({ handleSubmit }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [disabled, setDisabled] = useState(true);
 
-  const regexName = /^[a-zA-Z]{2,30}$/;
-  const regexPhoneNumber = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
+  useEffect(() => {
+    const regexName = /^[a-zA-Z]{2,30}$/;
+    const regexPhoneNumber = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
+
+    const disabled = !(regexName.test(firstName) && regexName.test(lastName) && regexPhoneNumber.test(phoneNumber));
+    setDisabled(disabled);
+  }, [firstName, lastName, phoneNumber]);
 
   const handleChangePhoneNumber = (event) => {
     setPhoneNumber(event.target.value);
   };
-
+  
   const handleChangeFirstName = (event) => {
     setFirstName(event.target.value);
   };
-
+  
   const handleChangeLastName = (event) => {
     setLastName(event.target.value);
   };
 
-  let disabled = (regexPhoneNumber.test(phoneNumber) && regexName.test(firstName) && regexName.test(lastName)) ? false : true;
-
   return (
     <form className='registration__form form' onSubmit={handleSubmit}>
-      <label htmlFor="firstName" className="registration__label form__label">
-        <input
-          id="firstName"
-          name="firstName"
-          type="text"
-          className="registration__input form__input"
-          required
-          onChange={handleChangeFirstName}
-          value={firstName}
-        />
-        <span className="registration__span form__span">
-          First Name
-        </span>
-      </label>
-      <label htmlFor="lastName" className="registration__label form__label">
-        <input
-          id="lastName"
-          name="lastName"
-          type="text"
-          className="registration__input form__input"
-          required
-          onChange={handleChangeLastName}
-          value={lastName}
-        />
-        <span className="registration__span form__span">
-          Last Name
-        </span>
-      </label>
-      <label htmlFor="number" className="registration__label form__label">
-        <input
-          id="number"
-          name="number"
-          type="text"
-          className="registration__input form__input"
-          required
-          onChange={handleChangePhoneNumber}
-          value={phoneNumber}
-        />
-        <span className="registration__span form__span">
-          Number
-        </span>
-      </label>
+      <InputField
+        id="firstName"
+        label="First Name"
+        type="text"
+        name="firstName"
+        value={firstName}
+        required
+        onChange={handleChangeFirstName}
+      />
+      <InputField
+        id="lastName"
+        label="Last Name"
+        type="text"
+        name="lastName"
+        value={lastName}
+        required
+        onChange={handleChangeLastName}
+      />
+      <InputField
+        id="number"
+        label="Number"
+        type="text"
+        name="number"
+        value={phoneNumber}
+        required
+        onChange={handleChangePhoneNumber}
+      />
       <button
         disabled={disabled}
         type='submit'
