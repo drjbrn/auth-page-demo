@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function RegistrationAccepted() {
   return (
-    <div  className="accepted">
+    <div className="accepted">
       <p className="accepted__text">
         Login account has been created
       </p>
