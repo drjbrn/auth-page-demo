@@ -1,9 +1,9 @@
 import useEmailAndPasswordValidation from "../hooks/useEmailAndPasswordValidation";
 import Email from "./Email"
 import Password from "./Passwords"
-import RenderCheckPassword from './RenderCheckPassword/RenderCheckPassword';
+import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 
-function AuthForm({ submitForm, buttonText, renderCheckPassword }) {
+function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
   const { email, password, isFormValid, handleChangeEmail, handleChangePassword } = useEmailAndPasswordValidation();
 
   return(
@@ -19,7 +19,7 @@ function AuthForm({ submitForm, buttonText, renderCheckPassword }) {
         validationPassword={handleChangePassword}
         password={password}
       />
-      {renderCheckPassword && password.length > 0 && <RenderCheckPassword password={password}/>}
+      {renderPasswordRequirements && password.length > 0 && <PasswordRequirements password={password}/>}
       <button
         disabled={isFormValid}
         className="btn">
