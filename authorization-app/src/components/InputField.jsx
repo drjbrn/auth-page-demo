@@ -1,4 +1,4 @@
-function InputField({ id, label, type, name, value, required, onChange }) {
+function InputField({ id, label, type, name, value, required, onChange, showPasswordIcon }) {
   return (
     <label htmlFor={id} className='form__label'>
       <input
@@ -10,6 +10,7 @@ function InputField({ id, label, type, name, value, required, onChange }) {
         onChange={onChange}
         value={value}
       />
+      {showPasswordIcon}
       <span className="form__span">{label}</span>
     </label>
   );
