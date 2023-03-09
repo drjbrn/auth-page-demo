@@ -8,7 +8,7 @@ function FirstStepOfRegistration({ handleSubmit }) {
       <AuthForm
         submitForm={handleSubmit}
         buttonText='Continue'
-        renderCheckPassword
+        renderPasswordRequirements
       />
       <div className='switch'>
         <p>
