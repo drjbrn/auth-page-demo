@@ -9,3 +9,29 @@
   border-radius: 1rem;
   padding: 2rem 0;
 }
+
+.greeting {
+  font-size: 1.5em;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  width: 539px;
+  background: $white-light;
+  border-radius: 1rem;
+  padding: 2rem 0;
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    color: $black;
+    gap: 0.5em;
+  }
+
+  &__link {
+    font-size: 1em !important;
+  }
+}
