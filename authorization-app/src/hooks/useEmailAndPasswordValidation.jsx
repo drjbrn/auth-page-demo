@@ -1,14 +1,12 @@
 import { useState } from 'react';
+import { EMAIL_REGEX, PASSWORD_REGEX } from '../constants/regex';
 
 const useEmailAndPasswordValidation = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g;
-
-  const isEmailValid = regexEmail.test(email);
-  const isPasswordValid = regexPassword.test(password);
+  const isEmailValid = EMAIL_REGEX.test(email);
+  const isPasswordValid = PASSWORD_REGEX.test(password);
 
   let isFormValid = isEmailValid && isPasswordValid ? false : true;
 
