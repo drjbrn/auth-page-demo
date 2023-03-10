@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NAME_REGEX, PHONE_REGEX } from '../../constants/regex';
 import InputField from "../../components/InputField";
 
 function SecondStepOfRegistration({ handleSubmit }) {
@@ -7,24 +8,27 @@ function SecondStepOfRegistration({ handleSubmit }) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [disabled, setDisabled] = useState(true);
 
-  useEffect(() => {
-    const regexName = /^[a-zA-Z]{2,30}$/;
-    const regexPhoneNumber = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
+  const validateName = (name) => NAME_REGEX.test(name);
+  const validatePhoneNumber = (number) => PHONE_REGEX.test(number);
 
-    const disabled = !(regexName.test(firstName) && regexName.test(lastName) && regexPhoneNumber.test(phoneNumber));
-    setDisabled(disabled);
+  useEffect(() => {
+    const isDisabled = !(validateName(firstName) && validateName(lastName) && validatePhoneNumber(phoneNumber));
+    setDisabled(isDisabled);
   }, [firstName, lastName, phoneNumber]);
 
-  const handleChangePhoneNumber = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-  
-  const handleChangeFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
-  
-  const handleChangeLastName = (event) => {
-    setLastName(event.target.value);
+  const handleInputChange = (event) => {
+    const fieldName = event.target.name;
+    const value = event.target.value;
+
+    const setters = {
+      firstName: setFirstName,
+      lastName: setLastName,
+      phoneNumber: setPhoneNumber,
+    };
+    const setter = setters[fieldName];
+    if (setter) {
+      setter(value);
+    }
   };
 
   return (
@@ -36,7 +40,7 @@ function SecondStepOfRegistration({ handleSubmit }) {
         name="firstName"
         value={firstName}
         required
-        onChange={handleChangeFirstName}
+        onChange={handleInputChange}
       />
       <InputField
         id="lastName"
@@ -45,7 +49,7 @@ function SecondStepOfRegistration({ handleSubmit }) {
         name="lastName"
         value={lastName}
         required
-        onChange={handleChangeLastName}
+        onChange={handleInputChange}
       />
       <InputField
         id="number"
@@ -54,7 +58,7 @@ function SecondStepOfRegistration({ handleSubmit }) {
         name="number"
         value={phoneNumber}
         required
-        onChange={handleChangePhoneNumber}
+        onChange={handleInputChange}
       />
       <button
         disabled={disabled}
