@@ -8,17 +8,23 @@ const useEmailAndPasswordValidation = () => {
   const isEmailValid = EMAIL_REGEX.test(email);
   const isPasswordValid = PASSWORD_REGEX.test(password);
 
-  let isFormValid = isEmailValid && isPasswordValid ? false : true;
+  const isFormValid = !(isEmailValid && isPasswordValid);
 
-  const handleChangeEmail = (event) => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handleChangePassword = (event) => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  return { email, password, isFormValid, handleChangeEmail, handleChangePassword };
+  return { 
+    email, 
+    password, 
+    isFormValid, 
+    handleEmailChange, 
+    handlePasswordChange 
+  };
 };
 
 export default useEmailAndPasswordValidation;
