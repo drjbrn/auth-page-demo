@@ -5,13 +5,13 @@ function InputField({ id, label, type, name, value, required, onChange, showPass
         id={id}
         name={name}
         type={type}
-        className="form__input"
+        className='form__input'
         required={required}
         onChange={onChange}
         value={value}
       />
       {showPasswordIcon}
-      <span className="form__span">{label}</span>
+      <span className='form__span'>{label}</span>
     </label>
   );
 }

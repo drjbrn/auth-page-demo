@@ -14,7 +14,7 @@ function FirstStepOfRegistration({ handleSubmit }) {
         <p>
           Already have an account?
         </p>
-        <Link to="../login">Login</Link>
+        <Link to='../login'>Login</Link>
       </div>
     </>
   )

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { NAME_REGEX, PHONE_REGEX } from '../../constants/regex';
-import InputField from "../../components/InputField";
+import InputField from '../../components/InputField';
 
 function SecondStepOfRegistration({ handleSubmit }) {
   const [firstName, setFirstName] = useState('');
@@ -34,28 +34,28 @@ function SecondStepOfRegistration({ handleSubmit }) {
   return (
     <form className='registration__form form' onSubmit={handleSubmit}>
       <InputField
-        id="firstName"
-        label="First Name"
-        type="text"
-        name="firstName"
+        id='firstName'
+        label='First Name'
+        type='text'
+        name='firstName'
         value={firstName}
         required
         onChange={handleInputChange}
       />
       <InputField
-        id="lastName"
-        label="Last Name"
-        type="text"
-        name="lastName"
+        id='lastName'
+        label='Last Name'
+        type='text'
+        name='lastName'
         value={lastName}
         required
         onChange={handleInputChange}
       />
       <InputField
-        id="number"
-        label="Number"
-        type="text"
-        name="number"
+        id='number'
+        label='Number'
+        type='text'
+        name='phoneNumber'
         value={phoneNumber}
         required
         onChange={handleInputChange}
