@@ -1,6 +1,6 @@
-import useEmailAndPasswordValidation from "../hooks/useEmailAndPasswordValidation";
-import Email from "./Email"
-import Password from "./Passwords"
+import useEmailAndPasswordValidation from '../hooks/useEmailAndPasswordValidation';
+import Email from './Email'
+import Password from './Passwords'
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 
 function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
@@ -8,9 +8,9 @@ function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
 
   return(
     <form
-      action=""
+      action=''
       onSubmit={submitForm}
-      className="form">
+      className='form'>
       <Email
           validationEmail={handleEmailChange}
           email={email}
@@ -22,7 +22,7 @@ function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
       {renderPasswordRequirements && password.length > 0 && <PasswordRequirements password={password}/>}
       <button
         disabled={isFormValid}
-        className="btn">
+        className='btn'>
         {buttonText}
       </button>
     </form>

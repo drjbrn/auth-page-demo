@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import InputField from './InputField';
 
 function Password({ validationPassword, password }) {
@@ -10,7 +10,7 @@ function Password({ validationPassword, password }) {
     setHidePassword(!hidePassword);
   };
 
-  const inputType = hidePassword ? "password" : "text";
+  const inputType = hidePassword ? 'password' : 'text';
 
   const eyeIcon = hidePassword
   ? <FontAwesomeIcon icon={faEye} />
@@ -18,10 +18,10 @@ function Password({ validationPassword, password }) {
 
   return (
     <InputField
-      id="password"
-      label="Password"
+      id='password'
+      label='Password'
       type={inputType}
-      name="password"
+      name='password'
       value={password}
       required
       onChange={validationPassword}

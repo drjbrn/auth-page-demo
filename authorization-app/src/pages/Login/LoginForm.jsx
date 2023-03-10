@@ -8,11 +8,11 @@ function LoginForm({ handleSubmit }) {
         submitForm={handleSubmit}
         buttonText='Login'
       />
-      <div className="switch">
+      <div className='switch'>
         <p>
           Don’t have an account?
         </p>
-        <Link to="../registration">
+        <Link to='../registration'>
           Sing Up
         </Link>
       </div>

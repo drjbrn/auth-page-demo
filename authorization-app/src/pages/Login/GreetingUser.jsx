@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function GreetingUser() {
   return (
-    <div className="greeting">
-      <p className="greeting__text">
+    <div className='greeting'>
+      <p className='greeting__text'>
         Hello, user!
       </p>
-      <div className="greeting__btn">
+      <div className='greeting__btn'>
         Go back to
-        <Link to="/" className="link greeting__link">
+        <Link to='/' className='link greeting__link'>
           Home
         </Link>
       </div>

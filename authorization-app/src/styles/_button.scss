@@ -78,7 +78,7 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     background-color: $black;
     position: absolute;
     left: -4px;
