@@ -4,7 +4,7 @@ import Password from "./Passwords"
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 
 function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
-  const { email, password, isFormValid, handleChangeEmail, handleChangePassword } = useEmailAndPasswordValidation();
+  const { email, password, isFormValid, handleEmailChange, handlePasswordChange } = useEmailAndPasswordValidation();
 
   return(
     <form
@@ -12,11 +12,11 @@ function AuthForm({ submitForm, buttonText, renderPasswordRequirements }) {
       onSubmit={submitForm}
       className="form">
       <Email
-          validationEmail={handleChangeEmail}
+          validationEmail={handleEmailChange}
           email={email}
       />
       <Password
-        validationPassword={handleChangePassword}
+        validationPassword={handlePasswordChange}
         password={password}
       />
       {renderPasswordRequirements && password.length > 0 && <PasswordRequirements password={password}/>}
