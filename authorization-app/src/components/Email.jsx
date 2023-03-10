@@ -1,4 +1,3 @@
-// import Input from './Input';
 import InputField from './InputField';
 
 function Email({ validationEmail, email }) {
