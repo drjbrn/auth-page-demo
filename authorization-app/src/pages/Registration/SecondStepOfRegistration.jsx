@@ -55,7 +55,7 @@ function SecondStepOfRegistration({ handleSubmit }) {
         id='number'
         label='Number'
         type='text'
-        name='number'
+        name='phoneNumber'
         value={phoneNumber}
         required
         onChange={handleInputChange}
