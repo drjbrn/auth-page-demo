@@ -1,11 +1,30 @@
-@import 'styles/vars.scss';
+@import 'styles/vars';
+@import 'styles/media-mixins';
 
 .app {
   color: $white;
   min-height: 100vh;
+}
+
+.container {
+  height: 100vh;
   display: flex;
-  justify-items: center;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  @include for-tablet {
+    width: 625px;
+  }
+
+  @include for-phone-landscape {
+    width: 470px;
+  }
+
+  @include for-phone {
+    width: auto;
+    margin: 0 15px;
+  }
 }
 
 .switch {
