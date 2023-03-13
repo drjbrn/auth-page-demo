@@ -8,26 +8,62 @@ import RegistrationAccepted from './RegistrationAccepted';
 
 function Registration() {
   const [stepOfRegistration, setStepOfRegistration] = useState('first');
-  const [acceptedRegistration, setAcceptedRegistration] = useState(false);
+  const [isRegistrationAccepted, setIsAcceptedRegistration] = useState(false);
+  const [authData, setAuthData] = useState({ email: '', password: '' });
+  const [firstName, setFirstName] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleFirstStepSubmit  = () => {
     setStepOfRegistration('second');
   }
 
-  const handleSubmitAccepted = (event) => {
+  const handleAuthDataChange = (email, password) => {
+    const currentData = JSON.parse(localStorage.getItem('authData')) || {};
+    const newData = { ...currentData, [email]: password };
+    const newDataJSON = JSON.stringify(newData);
+    localStorage.setItem('authData', newDataJSON);
+
+    setAuthData({ email, password });
+  };
+
+  const handleSecondStepSubmit = (event) => {
     event.preventDefault();
-    setAcceptedRegistration(true);
+    setIsAcceptedRegistration(true);
   }
+
+  const handleFirstNameChange = (value) => {
+    const currentData = JSON.parse(localStorage.getItem('authData')) || {};
+    const newAuthData = { ...authData, firstName: value };
+    const newData = { ...currentData, [authData.email]: newAuthData };
+    localStorage.setItem('authData', JSON.stringify(newData));
+
+    setFirstName(value);
+  };
 
   return (
     <div className='registration'>
-      { stepOfRegistration === 'first'
-        ? <FirstStepOfRegistration handleSubmit={handleSubmit} />
-        : acceptedRegistration === false
-        ? <SecondStepOfRegistration handleSubmit={handleSubmitAccepted}/>
+      {/* { stepOfRegistration === 'first'
+        ? <FirstStepOfRegistration
+            handleSubmit={handleFirstStepSubmit}
+            onAuthData={handleAuthDataChange}
+          />
+        : isRegistrationAccepted === false
+        ? <SecondStepOfRegistration
+            handleSubmit={handleSecondStepSubmit}
+            onFirstNameChange={handleFirstNameChange}
+          />
         : <RegistrationAccepted />
-      }
+      } */}
+      { stepOfRegistration === 'first' &&
+        <FirstStepOfRegistration
+          handleSubmit={handleFirstStepSubmit}
+          onAuthData={handleAuthDataChange}
+        />}
+      { stepOfRegistration === 'second' && !isRegistrationAccepted &&
+        <SecondStepOfRegistration
+            handleSubmit={handleSecondStepSubmit}
+            onFirstNameChange={handleFirstNameChange}
+          />}
+      {isRegistrationAccepted && <RegistrationAccepted />}
     </div>
   );
 }
