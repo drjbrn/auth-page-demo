@@ -1,4 +1,5 @@
 @import './vars';
+@import './media-mixins';
 
 .btn {
   background: transparent;
@@ -26,7 +27,7 @@
     border-radius: 40%;
     background: $dark-blue;
     opacity: 0.5;
-    transition: 5s;
+    transition: 4s;
   }
 
   &:before {
@@ -87,6 +88,14 @@
     height: 7px;
     z-index: -1;
     transition: all 0.5s ease-in-out;
+
+    @include for-tablet {
+      left: -3px;
+    }
+
+    @include for-phone {
+      left: -2.2px;
+    }
   }
   
   &:hover::before {
