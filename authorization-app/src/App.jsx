@@ -5,12 +5,14 @@ import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 
 function App() {
+  const authData = JSON.parse(localStorage.getItem('authData')) || {};
+
   return (
     <div className='app'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login data={authData}/>} />
           <Route path='/registration' element={<Registration />} />
         </Routes>
       </BrowserRouter>
