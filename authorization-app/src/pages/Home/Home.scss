@@ -26,6 +26,13 @@
     overflow: hidden;
     border-right: 0.12em solid $black;
     animation: typing 7s steps(53), blink 0.75s step-start infinite;
+
+    @include for-landscape-tablet {
+      white-space: normal;
+      animation: none;
+      border-right: none;
+      text-align: center;
+    }
   }
 
   &__btn {
