@@ -16,7 +16,7 @@ function Login({ data }) {
 
   const handleAuthData = (email, password) => {
     const passwordFromStorage = data[email].password;
-  
+
     if (passwordFromStorage === password) {
       setAcceptedLogin(true);
       setError(false);
