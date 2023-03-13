@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm';
 
-function LoginForm({ handleSubmit }) {
+function LoginForm({ handleSubmit, onAuthData, error }) {
   return (
     <>
       <AuthForm
         submitForm={handleSubmit}
         buttonText='Login'
+        onAuthData={onAuthData}
+        error={error}
       />
       <div className='switch'>
         <p>
