@@ -8,16 +8,15 @@ function Login({ data }) {
   const [error, setError] = useState(false);
   const [userFirstName, setUserFirstName] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = () => {
     if (!acceptedLogin) {
       setError(true);
     }
   }
 
-
-
   const handleAuthData = (email, password) => {
     const passwordFromStorage = data[email].password;
+  
     if (passwordFromStorage === password) {
       setAcceptedLogin(true);
       setError(false);
@@ -25,6 +24,7 @@ function Login({ data }) {
       setAcceptedLogin(false);
       setError(true);
     }
+  
     const userFirstName = data[email].firstName;
     setUserFirstName(userFirstName);
   }
