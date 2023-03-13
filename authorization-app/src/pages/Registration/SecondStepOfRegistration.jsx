@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { NAME_REGEX, PHONE_REGEX } from '../../constants/regex';
 import InputField from '../../components/InputField';
 
-function SecondStepOfRegistration({ handleSubmit }) {
+function SecondStepOfRegistration({ handleSubmit, onFirstNameChange }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -28,6 +28,10 @@ function SecondStepOfRegistration({ handleSubmit }) {
     const setter = setters[fieldName];
     if (setter) {
       setter(value);
+    }
+
+    if (fieldName === 'firstName' && onFirstNameChange) {
+      onFirstNameChange(value);
     }
   };
 

@@ -53,4 +53,9 @@
       right: 5%;
     }
   }
+
+  &__login_error {
+    color: $red;
+    text-align: center;
+  }
 }

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function GreetingUser() {
+function GreetingUser({ userFirstName }) {
   return (
     <div className='greeting'>
       <p className='greeting__text'>
-        Hello, user!
+        Hello, {userFirstName}!
       </p>
       <div className='greeting__btn'>
         Go back to

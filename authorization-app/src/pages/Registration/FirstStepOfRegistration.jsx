@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm';
 
-function FirstStepOfRegistration({ handleSubmit }) {
+function FirstStepOfRegistration({ handleSubmit, onAuthData }) {
 
   return (
     <>
@@ -9,6 +9,7 @@ function FirstStepOfRegistration({ handleSubmit }) {
         submitForm={handleSubmit}
         buttonText='Continue'
         renderPasswordRequirements
+        onAuthData={onAuthData}
       />
       <div className='switch'>
         <p>
