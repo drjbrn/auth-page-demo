@@ -23,5 +23,10 @@
 
   &__link {
     font-size: 1em !important;
+
+    &::before {
+      content: '';
+      left: -2px !important;
+    }
   }
 }
