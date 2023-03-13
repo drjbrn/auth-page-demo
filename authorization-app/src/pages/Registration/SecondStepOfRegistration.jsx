@@ -36,7 +36,7 @@ function SecondStepOfRegistration({ handleSubmit, onFirstNameChange }) {
   };
 
   return (
-    <form className='registration__form form' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
       <InputField
         id='firstName'
         label='First Name'
@@ -67,7 +67,7 @@ function SecondStepOfRegistration({ handleSubmit, onFirstNameChange }) {
       <button
         disabled={disabled}
         type='submit'
-        className='registration__btn btn'>
+        className='btn'>
         Confirm
       </button>
     </form>
