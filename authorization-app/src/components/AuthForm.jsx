@@ -26,7 +26,7 @@ function AuthForm({ submitForm, buttonText, renderPasswordRequirements, onAuthDa
         password={password}
       />
       {renderPasswordRequirements && password.length > 0 && <PasswordRequirements password={password}/>}
-      {error && <p className="form__login_error">
+      {error && <p className='form__login_error'>
                   Invalid email or password. <br />
                   Please check your login information and try again.
                 </p>
