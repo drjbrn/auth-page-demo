@@ -15,7 +15,12 @@ function Login({ data }) {
   }
 
   const handleAuthData = (email, password) => {
-    const passwordFromStorage = data[email].password;
+    if (!data[email]) {
+      setError(true);
+      return;
+    }
+
+    const passwordFromStorage = data[email].password || '';
 
     if (passwordFromStorage === password) {
       setAcceptedLogin(true);
@@ -24,7 +29,7 @@ function Login({ data }) {
       setAcceptedLogin(false);
       setError(true);
     }
-  
+
     const userFirstName = data[email].firstName;
     setUserFirstName(userFirstName);
   }
