@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import  secureLocalStorage  from  "react-secure-storage";
 import './Registration.scss';
 import '../../styles/_button.scss';
 import '../../styles/_form.scss';
@@ -17,10 +18,10 @@ function Registration() {
   }
 
   const handleAuthDataChange = (email, password) => {
-    const currentData = JSON.parse(localStorage.getItem('authData')) || {};
+    const currentData = JSON.parse(secureLocalStorage.getItem('authData')) || {};
     const newData = { ...currentData, [email]: password };
     const newDataJSON = JSON.stringify(newData);
-    localStorage.setItem('authData', newDataJSON);
+    secureLocalStorage.setItem('authData', newDataJSON);
 
     setAuthData({ email, password });
   };
@@ -31,10 +32,10 @@ function Registration() {
   }
 
   const handleFirstNameChange = (value) => {
-    const currentData = JSON.parse(localStorage.getItem('authData')) || {};
+    const currentData = JSON.parse(secureLocalStorage.getItem('authData')) || {};
     const newAuthData = { ...authData, firstName: value };
     const newData = { ...currentData, [authData.email]: newAuthData };
-    localStorage.setItem('authData', JSON.stringify(newData));
+    secureLocalStorage.setItem('authData', JSON.stringify(newData));
 
     setFirstName(value);
   };
