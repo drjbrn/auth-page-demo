@@ -7,10 +7,10 @@ function RegistrationAccepted() {
         Login account has been created!
       </p>
       <div className='accepted__btn'>
-        <Link to='/' className='link'>
+        <Link to='/' className='link accepted__link'>
           Home
         </Link>
-        <Link to='../login' className='link'>
+        <Link to='../login' className='link accepted__link'>
           Log In
         </Link>
       </div>
