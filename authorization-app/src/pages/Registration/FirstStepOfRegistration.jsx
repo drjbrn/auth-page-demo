@@ -15,7 +15,7 @@ function FirstStepOfRegistration({ handleSubmit, onAuthData }) {
         <p>
           Already have an account?
         </p>
-        <Link to='../login'>Login</Link>
+        <Link to='../login'>Log In</Link>
       </div>
     </>
   )

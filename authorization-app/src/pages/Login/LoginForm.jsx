@@ -6,7 +6,7 @@ function LoginForm({ handleSubmit, onAuthData, error }) {
     <>
       <AuthForm
         submitForm={handleSubmit}
-        buttonText='Login'
+        buttonText='Log In'
         onAuthData={onAuthData}
         error={error}
       />

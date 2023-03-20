@@ -11,7 +11,7 @@ function RegistrationAccepted() {
           Home
         </Link>
         <Link to='../login' className='link'>
-          Login
+          Log In
         </Link>
       </div>
     </div>

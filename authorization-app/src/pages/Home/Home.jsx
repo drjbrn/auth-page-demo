@@ -8,8 +8,12 @@ function Home() {
         Welcome to the demo version of the authentication page
       </h1>
       <div className='home-page__btn'>
-        <Link to='../login' className='link'>Login</Link>
-        <Link to='../registration' className='link'>Sing Up</Link>
+        <Link to='../login' className='link'>
+          Log In
+        </Link>
+        <Link to='../registration' className='link'>
+          Sing Up
+        </Link>
       </div>
     </div>
   )

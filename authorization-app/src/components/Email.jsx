@@ -5,7 +5,7 @@ function Email({ validationEmail, email }) {
     <InputField
       id='email'
       label='Email Address'
-      type='text'
+      type='email'
       name='email'
       value={email}
       required

@@ -1,12 +1,10 @@
 @import './vars';
 @import './media-mixins';
+@import './mixins';
 
 .form {
   margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-rules(column);
   gap: 50px;
 
   &__label {
