@@ -48,19 +48,19 @@ function Registration() {
 
   return (
     <div className='registration'>
-      {step === 1 && (
+      { step === 1 &&
         <FirstStepOfRegistration
           handleSubmit={handleFirstStepSubmit}
           onAuthData={handleAuthDataChange}
         />
-      )}
+      }
 
-      {step === 2 && !isAccepted && (
+      { step === 2 && !isAccepted &&
         <SecondStepOfRegistration
           handleSubmit={handleSecondStepSubmit}
           onFirstNameChange={handleFirstNameChange}
         />
-      )}
+      }
 
       {isAccepted && <RegistrationAccepted />}
     </div>
