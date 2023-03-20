@@ -8,63 +8,61 @@ import FirstStepOfRegistration from './FirstStepOfRegistration';
 import RegistrationAccepted from './RegistrationAccepted';
 
 function Registration() {
-  const [stepOfRegistration, setStepOfRegistration] = useState('first');
-  const [isRegistrationAccepted, setIsAcceptedRegistration] = useState(false);
-  const [authData, setAuthData] = useState({ email: '', password: '' });
-  const [firstName, setFirstName] = useState('');
+  const [registrationState, setRegistrationState] = useState({
+    step: 1,
+    isAccepted: false
+  });
+
+  const [userData, setUserData] = useState({
+    email: '',
+    password: '',
+    firstName: ''
+  });
 
   const handleFirstStepSubmit  = () => {
-    setStepOfRegistration('second');
+    setRegistrationState({ ...registrationState, step: 2 });
   }
-
-  const handleAuthDataChange = (email, password) => {
-    const currentData = JSON.parse(secureLocalStorage.getItem('authData')) || {};
-    const newData = { ...currentData, [email]: password };
-    const newDataJSON = JSON.stringify(newData);
-    secureLocalStorage.setItem('authData', newDataJSON);
-
-    setAuthData({ email, password });
-  };
 
   const handleSecondStepSubmit = (event) => {
     event.preventDefault();
-    setIsAcceptedRegistration(true);
+    setRegistrationState({ ...registrationState, isAccepted: true });
   }
 
-  const handleFirstNameChange = (value) => {
-    const currentData = JSON.parse(secureLocalStorage.getItem('authData')) || {};
-    const newAuthData = { ...authData, firstName: value };
-    const newData = { ...currentData, [authData.email]: newAuthData };
-    secureLocalStorage.setItem('authData', JSON.stringify(newData));
+  const handleAuthDataChange = (email, password) => {
+    const currentData = JSON.parse(secureLocalStorage.getItem('userData')) || {};
+    const newData = { ...currentData, [email]: { email, password, firstName: userData.firstName } };
+    secureLocalStorage.setItem('userData', JSON.stringify(newData));
 
-    setFirstName(value);
+    setUserData(prevUserData => ({ ...prevUserData, email, password }));
   };
+
+  const handleFirstNameChange = (firstName) => {
+    const currentData = JSON.parse(secureLocalStorage.getItem('userData')) || {};
+    const newData = { ...currentData, [userData.email]: { email: userData.email, password: userData.password, firstName } };
+    secureLocalStorage.setItem('userData', JSON.stringify(newData));
+
+    setUserData(prevUserData => ({ ...prevUserData, firstName }));
+  };
+
+  const { step, isAccepted } = registrationState;
 
   return (
     <div className='registration'>
-      {/* { stepOfRegistration === 'first'
-        ? <FirstStepOfRegistration
-            handleSubmit={handleFirstStepSubmit}
-            onAuthData={handleAuthDataChange}
-          />
-        : isRegistrationAccepted === false
-        ? <SecondStepOfRegistration
-            handleSubmit={handleSecondStepSubmit}
-            onFirstNameChange={handleFirstNameChange}
-          />
-        : <RegistrationAccepted />
-      } */}
-      { stepOfRegistration === 'first' &&
+      {step === 1 && (
         <FirstStepOfRegistration
           handleSubmit={handleFirstStepSubmit}
           onAuthData={handleAuthDataChange}
-        />}
-      { stepOfRegistration === 'second' && !isRegistrationAccepted &&
+        />
+      )}
+
+      {step === 2 && !isAccepted && (
         <SecondStepOfRegistration
-            handleSubmit={handleSecondStepSubmit}
-            onFirstNameChange={handleFirstNameChange}
-          />}
-      {isRegistrationAccepted && <RegistrationAccepted />}
+          handleSubmit={handleSecondStepSubmit}
+          onFirstNameChange={handleFirstNameChange}
+        />
+      )}
+
+      {isAccepted && <RegistrationAccepted />}
     </div>
   );
 }
