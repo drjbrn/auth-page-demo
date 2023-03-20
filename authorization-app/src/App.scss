@@ -10,7 +10,7 @@
 .container {
   height: 100vh;
   margin: 0 auto;
-  @include flex-rules(column);
+  @include flex-rules();
 
   @include for-tablet {
     width: 625px;
