@@ -6,10 +6,12 @@
 }
 
 .accepted {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-rules(column);
   gap: 2em;
+
+  &__text {
+    text-align: center;
+  }
 
   &__btn {
     display: flex;
