@@ -1,5 +1,6 @@
 @import 'styles/vars';
 @import 'styles/media-mixins';
+@import './styles/mixins';
 
 .app {
   color: $white;
@@ -8,10 +9,8 @@
 
 .container {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
+  @include flex-rules(column);
 
   @include for-tablet {
     width: 625px;
