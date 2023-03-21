@@ -3,6 +3,7 @@ import './App.scss';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/registration' element={<Registration />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </div>
