@@ -1,7 +1,7 @@
 {
   "name": "authorization-app",
   "version": "0.1.0",
-  "homepage": "https://rn-moonlight.github.io/authorization-test",
+  "homepage": "https://rn-moonlight.github.io/auth-page-demo",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
