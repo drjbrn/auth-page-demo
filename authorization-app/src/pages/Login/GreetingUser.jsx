@@ -1,17 +1,18 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from '../../components/ButtonLink';
 
 function GreetingUser({ userFirstName }) {
   return (
     <div className='greeting'>
-      <p className='greeting__text'>
+      <h1 className='greeting__title'>
         Hello, {userFirstName}!
-      </p>
-      <div className='greeting__btn'>
+      </h1>
+      <p className='greeting__text'>
         Go back to
-        <Link to='/' className='link greeting__link'>
-          Home
-        </Link>
-      </div>
+      </p>
+      <ButtonLink
+        className='greeting'
+        showHome={true}
+      />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from '../../components/ButtonLink';
 
 function RegistrationAccepted() {
   return (
@@ -6,14 +6,11 @@ function RegistrationAccepted() {
       <p className='accepted__text'>
         Login account has been created!
       </p>
-      <div className='accepted__btn'>
-        <Link to='/' className='link accepted__link'>
-          Home
-        </Link>
-        <Link to='../login' className='link accepted__link'>
-          Log In
-        </Link>
-      </div>
+      <ButtonLink
+        className='accepted'
+        showHome={true}
+        showLogIn={true}
+      />
     </div>
   )
 }
