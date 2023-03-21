@@ -7,13 +7,24 @@
 
 .greeting {
   font-size: 1em;
-  @include flex-rules(column);
+  display: grid;
+  justify-items: center;
+  grid-template-areas: 
+      'title title'
+      'text link';
+  gap: 0.7em;
+
+  &__title {
+    grid-area: title;
+    color: $black;
+  }
 
   &__text {
-    margin-bottom: 20px;
+    grid-area: text;
   }
 
   &__btn {
+    grid-area: link;
     color: $black;
     display: flex;
     gap: 0.5em;
