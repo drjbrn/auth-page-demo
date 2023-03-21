@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import './PageNotFound.scss';
+import ButtonLink from '../../components/ButtonLink';
 
 function PageNotFound() {
   return(
@@ -10,17 +10,12 @@ function PageNotFound() {
       <p className='page-not-found__text'>
         The page you are looking for cannot be found. Please check the URL.
       </p>
-      <div className='page-not-found__btn'>
-        <Link to='/' className='link page-not-found__link'>
-          Home
-        </Link>
-        <Link to='/login' className='link page-not-found__link'>
-          Log In
-        </Link>
-        <Link to='/registration' className='link page-not-found__link'>
-          Sing Up
-        </Link>
-      </div>
+      <ButtonLink
+        className='page-not-found'
+        showHome={true}
+        showLogIn={true}
+        showSignUp={true}
+      />
     </div>
   )
 }
