@@ -1,6 +1,6 @@
 # auth-page-demo
 
-This project is a demo version of a registration and login system developed with React using create-react-app.
+This project is my first attempt at using React and is a demo version of a registration and login system developed with create-react-app
 
 The project consists of four pages: 
 - home page, 
