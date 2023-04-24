@@ -14,7 +14,7 @@ The following technologies are used for the effective implementation of the proj
 - React Router (for seamless navigation between pages)
 - react-secure-storage (for secure storage of user data in localStorage)
 
-[Project link](https://rn-moonlight.github.io/auth-page-demo/)
+[Project link](https://drjbrn.github.io/auth-page-demo/)
 
 ## Home page
 ![home page](https://user-images.githubusercontent.com/112949144/226892222-21b70414-7c13-427c-bdfd-b91a112cfd80.png)
