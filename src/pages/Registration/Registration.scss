@@ -1,0 +1,25 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.registration {
+  @include white-bg;
+}
+
+.accepted {
+  @include flex-rules(column);
+  gap: 2em;
+
+  &__text {
+    text-align: center;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 2em;
+  }
+  
+  &__link {
+    font-size: 1.2em!important;
+  }
+}
+

@@ -1,0 +1,32 @@
+@import 'styles/vars';
+@import 'styles/media-mixins';
+@import './styles/mixins';
+
+.app {
+  color: $white;
+  min-height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  @include flex-rules();
+
+  @include for-tablet {
+    width: 625px;
+  }
+
+  @include for-phone-landscape {
+    width: 470px;
+  }
+
+  @include for-phone {
+    width: auto;
+    margin: 0 15px;
+  }
+}
+
+.switch {
+  display: flex;
+  gap: 0.5em;
+}

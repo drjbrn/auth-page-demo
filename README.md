@@ -1,5 +1,3 @@
-# auth-page-demo
-
 This project is my first attempt at using React and is a demo version of a registration and login system developed with create-react-app
 
 The project consists of four pages: 
@@ -27,3 +25,4 @@ The following technologies are used for the effective implementation of the proj
 
 ## 404 error page
 ![404 page](https://user-images.githubusercontent.com/112949144/226892617-0109ce81-ce0e-4ec6-8d98-2c325a11d9d7.png)
+

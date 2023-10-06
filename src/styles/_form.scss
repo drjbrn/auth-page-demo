@@ -1,0 +1,64 @@
+@import './vars';
+@import './media-mixins';
+@import './mixins';
+
+.form {
+  margin: 1rem;
+  @include flex-rules(column);
+  gap: 50px;
+
+  &__label {
+    position: relative;
+  
+    & input:focus ~ span,
+    & input:not(:focus):valid ~ span {
+      top: -50%;
+      font-size: 14px;
+      opacity: 1;
+    }
+  }
+  
+  &__input {
+    background: transparent;
+    color: $black;
+    width: 451px;
+    height: 57px;
+    background: $white;
+    border: 1px solid $brown-border;
+    border-radius: 40px;
+    padding-left: 1.1rem;
+
+    @include for-phone {
+      width: 75vw;
+    }
+  }
+  
+  &__span {
+    font-size: 16px;
+    color: $black;
+    opacity: 0.5;
+    pointer-events: none;
+    position: absolute;
+    top: 31%;
+    left: 4%;
+    transition: top 0.6s ease;
+  }
+
+  &__password-eye  {
+    cursor: pointer;
+    color: $black;
+  
+    & svg {
+      width: 27px;
+      height: 27px;
+      position: absolute;
+      top: 28%;
+      right: 5%;
+    }
+  }
+
+  &__login_error {
+    color: $red;
+    text-align: center;
+  }
+}

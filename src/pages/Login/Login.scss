@@ -1,0 +1,41 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.login {
+  @include white-bg;
+}
+
+.greeting {
+  font-size: 1em;
+  display: grid;
+  justify-items: center;
+  grid-template-areas: 
+      'title title'
+      'text link';
+  gap: 0.7em;
+
+  &__title {
+    grid-area: title;
+    color: $black;
+  }
+
+  &__text {
+    grid-area: text;
+  }
+
+  &__btn {
+    grid-area: link;
+    color: $black;
+    display: flex;
+    gap: 0.5em;
+  }
+
+  &__link {
+    font-size: 1em !important;
+
+    &::before {
+      content: '';
+      left: -2px !important;
+    }
+  }
+}

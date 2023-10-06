@@ -1,0 +1,35 @@
+@mixin for-desktop-up {
+  @media (min-width: 1475px) {
+    @content;
+  }
+}
+
+@mixin for-laptop {
+  @media (max-width: 1475px) {
+    @content;
+  }
+}
+
+@mixin for-landscape-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: 770px) {
+    @content;
+  }
+}
+
+@mixin for-phone-landscape {
+  @media (max-width: 630px) {
+    @content;
+  }
+}
+
+@mixin for-phone {
+  @media (max-width: 475px) {
+    @content;
+  }
+}

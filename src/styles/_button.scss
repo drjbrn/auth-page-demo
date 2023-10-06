@@ -1,0 +1,105 @@
+@import './vars';
+@import './media-mixins';
+
+.btn {
+  background: transparent;
+  width: 200px;
+  height: 57px;
+  padding: 0.5rem 4rem;
+  color: $black;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid $brown-border;
+  border-radius: 40px;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 3s ease;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 40%;
+    background: $dark-blue;
+    opacity: 0.5;
+    transition: 4s;
+  }
+
+  &:before {
+    left: -25%;
+    transform: translate3d(0, 1em, 0) rotate(-324deg);
+  }
+
+  &:after {
+    right: -30%;
+    transform: translate3d(0, 1em, 0) rotate(155deg);
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+
+    &:before,
+    &:after {
+      background: $dark-blue;
+      transform: translate3d(0, -5em, 0);
+      width: 200%;
+      opacity: 0.9;
+    }
+  }
+
+  &:disabled {
+    transition: none;
+    background: $grey;
+    color: $white;
+    
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    &:before,
+    &:after {
+      transform: translate3d(0, -5em, 0);
+      width: 200%;
+      background: $dark-blue;
+      opacity: 0;
+    }
+  }
+}
+
+.link {
+  color: $black;
+  font-size: 1.5em;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: $black;
+    position: absolute;
+    left: -4px;
+    bottom: 3px;
+    width: 110%;
+    height: 7px;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+
+    @include for-tablet {
+      left: -3px;
+    }
+
+    @include for-phone {
+      left: -2.2px;
+    }
+  }
+  
+  &:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+}

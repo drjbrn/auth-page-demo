@@ -1,0 +1,22 @@
+@import './media-mixins';
+
+@mixin white-bg{
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  width: 539px;
+  background: $white-light;
+  border-radius: 1rem;
+  padding: 2rem 0;
+
+  @include for-phone {
+    width: 90vw;
+  }
+}
+
+@mixin flex-rules($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
